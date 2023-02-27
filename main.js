@@ -1078,7 +1078,7 @@ async function getPlaylistTracks(owner, id) {
                 }
                 playlistObject.stateString += `${no}:${cleanState(trackName)} - ${cleanState(artist)}`;
                 playlistObject.listString += `${cleanState(trackName)} - ${cleanState(artist)}`;
-                playlistObject.trackIdMap += cleanState(trackId);
+                playlistObject.trackIdMap += cleanState(trackId);reload
                 playlistObject.trackIds += `${no}:${cleanState(trackId)}`;
                 playlistObject.listNumber += no;
                 let a = {
@@ -1196,7 +1196,8 @@ function createDevices(data) {
     }
     let addedList = [];
     let fn = function (device) {
-        let deviceId = loadOrDefault(device, 'id', '');
+        
+        let deviceId = loadOrDefault(device, 'id', '').split("_", 1);
         let deviceName = loadOrDefault(device, 'name', '');
         if (isEmpty(deviceName)) {
             adapter.log.warn('empty device name')
