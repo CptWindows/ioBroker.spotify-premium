@@ -1197,7 +1197,9 @@ function createDevices(data) {
     let addedList = [];
     let fn = function (device) {
         
-        let deviceId = loadOrDefault(device, 'id', '').split("_", 1);
+        let deviceId = loadOrDefault(device, 'id', '')
+        deviceid = deviceid.split("_")[0];
+        deviceid = deviceid.replace(/_/g, "");
         let deviceName = loadOrDefault(device, 'name', '');
         if (isEmpty(deviceName)) {
             adapter.log.warn('empty device name')
