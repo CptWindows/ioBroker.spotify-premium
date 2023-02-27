@@ -1078,7 +1078,7 @@ async function getPlaylistTracks(owner, id) {
                 }
                 playlistObject.stateString += `${no}:${cleanState(trackName)} - ${cleanState(artist)}`;
                 playlistObject.listString += `${cleanState(trackName)} - ${cleanState(artist)}`;
-                playlistObject.trackIdMap += cleanState(trackId);reload
+                playlistObject.trackIdMap += cleanState(trackId);
                 playlistObject.trackIds += `${no}:${cleanState(trackId)}`;
                 playlistObject.listNumber += no;
                 let a = {
